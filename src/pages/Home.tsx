@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { xml2js, js2xml } from "xml-js";
+import { useEffect, useState } from "react";
 
 type User = {
   name: string;
