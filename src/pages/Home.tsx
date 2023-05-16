@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import Button from "../components/Button";
+import UserTable from "../components/UserTable";
 
-type User = {
+export type User = {
   name: string;
   age: number;
   hobbies: string[];
@@ -75,32 +77,8 @@ const Home = () => {
     <>
       <h1 className="text-xl font-bold">User Data</h1>
       <div className="flex flex-col items-end w-8/12">
-        <table className="table-fixed mt-2 w-full  border-collapse border border-slate-400 text-left rounded-sm">
-          <thead className="bg-orange-50">
-            <tr>
-              <th className="p-2">Name</th>
-              <th className="p-2">Age</th>
-              <th className="p-2">Hobbies</th>
-            </tr>
-          </thead>
-          <tbody>
-            {userData.map((user, i) => (
-              <tr key={user.name + i}>
-                <td className="border-b border-slate-400 p-2">{user.name}</td>
-                <td className="border-b border-slate-400 p-2">{user.age}</td>
-                <td className="border-b border-slate-400 p-2">
-                  {user.hobbies.length > 0 ? user.hobbies.join(", ") : "None"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <button
-          className="px-4 py-2 bg-blue-600 rounded-b-sm text-white"
-          onClick={onConvertClick}
-        >
-          Convert
-        </button>
+        <UserTable userData={userData} />
+        <Button onClick={onConvertClick} />
       </div>
     </>
   );
