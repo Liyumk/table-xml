@@ -78,7 +78,7 @@ const Home = () => {
       <h1 className="text-xl font-bold">User Data</h1>
       <div className="flex flex-col items-end w-8/12">
         <UserTable userData={userData} />
-        <Button onClick={onConvertClick} />
+        <Button onClick={onConvertClick} title="Convert" />
       </div>
     </>
   );
